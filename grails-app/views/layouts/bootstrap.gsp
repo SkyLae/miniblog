@@ -1,5 +1,5 @@
 <%@ page import="org.codehaus.groovy.grails.web.servlet.GrailsApplicationAttributes" %>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -22,6 +22,7 @@
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+		<link rel="stylesheet" href="<g:createLinkTo dir='css' file='miniblog.css'/>"/>
 
 		<g:layoutHead/>
 		<r:layoutResources/>
@@ -43,9 +44,20 @@
 					<div class="nav-collapse">
 						<ul class="nav">							
 							<li<%= request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/')}">Home</a></li>
-							<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-								<li<%= c.logicalPropertyName == controllerName ? ' class="active"' : '' %>><g:link controller="${c.logicalPropertyName}">${c.naturalName}</g:link></li>
-							</g:each>
+							<li<%= request.forwardURI == "${createLink(uri: '/blog')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/blog')}">Blog</a></li>
+							<li<%= request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/')}">Archives</a></li>
+							<li<%= request.forwardURI == "${createLink(uri: '/user')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/user')}">Admin</a></li>
+							<li<%= request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : '' %>><a href="${createLink(uri: '/')}">About</a></li>
+							<!--
+								<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+									<li<%= c.logicalPropertyName == controllerName ? ' class="active"' : '' %>><g:link controller="${c.logicalPropertyName}">${c.naturalName}</g:link></li>
+								</g:each> 
+							 -->
+							 <!--
+							 	<li><g:link controller="user" action="index">User</g:link></li>
+							 	<li><g:link controller="comment" action="index">Comment</g:link></li>
+							 	<li><g:link controller="feedback" action="index">Feedback</g:link></li> 
+							 -->
 						</ul>
 					</div>
 				</div>

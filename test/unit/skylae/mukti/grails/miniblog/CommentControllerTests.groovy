@@ -3,6 +3,9 @@ package skylae.mukti.grails.miniblog
 
 
 import org.junit.*
+
+import skylae.belajar.grails.miniblog.Comment;
+import skylae.belajar.grails.miniblog.CommentController;
 import grails.test.mixin.*
 
 @TestFor(CommentController)

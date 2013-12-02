@@ -3,6 +3,9 @@ package skylae.mukti.grails.miniblog
 
 
 import org.junit.*
+
+import skylae.belajar.grails.miniblog.User;
+import skylae.belajar.grails.miniblog.UserController;
 import grails.test.mixin.*
 
 @TestFor(UserController)

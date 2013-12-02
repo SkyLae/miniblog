@@ -3,6 +3,9 @@ package skylae.mukti.grails.miniblog
 
 
 import org.junit.*
+
+import skylae.belajar.grails.miniblog.Feedback;
+import skylae.belajar.grails.miniblog.FeedbackController;
 import grails.test.mixin.*
 
 @TestFor(FeedbackController)
